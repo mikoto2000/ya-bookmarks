@@ -1,0 +1,13 @@
+{
+  "name": "development environment",
+  "dockerComposeFile": [
+    "../compose.yaml"
+  ],
+  "service": "app",
+  "workspaceFolder": "/work",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/robbert229/devcontainer-features/postgresql-client:1": {},
+  }
+}
+
