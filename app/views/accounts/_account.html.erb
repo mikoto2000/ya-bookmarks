@@ -1,0 +1,42 @@
+<div id="<%= dom_id account %>">
+  <table class="table table-hover">
+    <tr>
+      <td>
+        <strong>Id:</strong>
+      </td>
+      <td>
+        <%= account.id %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>
+          <%= Account.human_attribute_name(:display_name) %>
+        </strong>
+      </td>
+      <td>
+        <%= account.display_name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>
+          <%= Account.human_attribute_name(:created_at) %>
+        </strong>
+      </td>
+      <td>
+        <%= account.created_at && l(account.created_at) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>
+          <%= Account.human_attribute_name(:updated_at) %>
+        </strong>
+      </td>
+      <td>
+        <%= account.updated_at && l(account.updated_at) %>
+      </td>
+    </tr>
+  </table>
+</div>

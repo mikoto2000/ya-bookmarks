@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  display_name: one
+  created_at: 2025-06-15 20:02:45 +0900
+  updated_at: 2025-06-16 20:02:45 +0900
+
+two:
+  display_name: two
+  created_at: 2025-06-17 20:02:45 +0900
+  updated_at: 2025-06-18 20:02:45 +0900
+
+dummy:
+  display_name: dummy
+  created_at: 2025-06-19 20:02:45 +0900
+  updated_at: 2025-06-20 20:02:45 +0900
+
+destroy_target:
+  display_name: account
+  created_at: 2025-06-21 20:02:45 +0900
+  updated_at: 2025-06-22 20:02:45 +0900

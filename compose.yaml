@@ -47,9 +47,17 @@ services:
       KC_DB_PASSWORD: password
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: password
-    command: ["start-dev"]
+    volumes:
+      - ./data/keycloak:/keycloak
+    command:
+      - "start-dev"
+      - "--http-enabled=false"
+      - "--https-key-store-file=/keycloak/keycloak.p12"
+      - "--https-key-store-password=changeme"
+      - "--https-key-store-type=PKCS12"
     ports:
       - "0.0.0.0:8080:8080"
+      - "0.0.0.0:8443:8443"
     depends_on:
       - postgres
     healthcheck:
