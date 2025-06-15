@@ -23,6 +23,28 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div>
+      <%= yield %>
+
+      <% if !session[:user].nil? %>
+        user_info: <%= session[:user] %>
+
+      <%= form_tag('auth/logout', method: 'get', data: {turbo: false}) do %>
+        <button type='submit'>Logout</button>
+      <%- end %>
+
+      <%= yield %>
+
+    <% else %>
+
+      <%= form_tag('/auth/openid_connect', method: 'post', data: {turbo: false}) do %>
+        <button type='submit'>Login</button>
+      <%- end %>
+
+      <p>ログインしてください</p>
+
+    <% end %>
+
+    </div>
   </body>
 </html>

@@ -73,3 +73,8 @@ gem "rubocop-minitest", group: "development"
 gem "rubocop-i18n", group: "development"
 gem "rubocop-thread_safety", group: "development"
 gem "erb_lint", group: "development"
+
+gem 'omniauth'
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth_openid_connect'
+

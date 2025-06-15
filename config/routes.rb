@@ -11,4 +11,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # ログイン時は、OmniAuth がここを叩く
+  get 'auth/:provider/callback', to: 'session#create'
+
+  # ログアウト form で、ここを叩くようにする
+  get 'auth/logout', to: 'session#delete'
+
 end
