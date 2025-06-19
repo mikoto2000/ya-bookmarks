@@ -4,7 +4,8 @@ class PagesController < ApplicationController
 
   # GET /pages
   def index
-    @pages = Page.find.join
+    @pages = Page
+      .all
     @q = @pages.ransack(params[:q])
     @q.sorts = "id asc" if @q.sorts.empty?
     @pagy, @pages = pagy(@q.result, page: params[:page], items: params[:items])
