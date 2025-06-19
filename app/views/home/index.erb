@@ -1,0 +1,15 @@
+<div style="display: flex;flex-direction: column;height: 100vh;">
+
+  <header class="main-content-header">
+    <p style="color: green"><%= notice %></p>
+  </header>
+
+  <main>
+    <ol>
+    <% @pages.each do |page| %>
+      <li><a href="<%= page.url %>"><%= page.url%></li>
+    <% end %>
+    </ol>
+  </main>
+</div>
+
