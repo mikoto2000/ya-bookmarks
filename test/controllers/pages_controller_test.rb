@@ -97,8 +97,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   test "should create page" do
     assert_difference("Page.count") do
       post pages_url, params: { page:
-        { url: @page.url }
-       }
+        { url: @page.url } }
     end
 
     assert_redirected_to page_url(Page.last)
@@ -116,8 +115,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
 
   test "should update page" do
     patch page_url(@page), params: { page:
-      { url: @page.url }
-     }
+      { url: @page.url } }
     assert_redirected_to page_url(@page)
   end
 

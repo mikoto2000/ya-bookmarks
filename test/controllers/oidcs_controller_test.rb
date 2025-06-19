@@ -125,8 +125,7 @@ class OidcsControllerTest < ActionDispatch::IntegrationTest
   test "should create oidc" do
     assert_difference("Oidc.count") do
       post oidcs_url, params: { oidc:
-        { account_id: @oidc.account_id, issuer: @oidc.issuer, sub: @oidc.sub }
-       }
+        { account_id: @oidc.account_id, issuer: @oidc.issuer, sub: @oidc.sub } }
     end
 
     assert_redirected_to oidc_url(Oidc.last)
@@ -144,8 +143,7 @@ class OidcsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update oidc" do
     patch oidc_url(@oidc), params: { oidc:
-      { account_id: @oidc.account_id, issuer: @oidc.issuer, sub: @oidc.sub }
-     }
+      { account_id: @oidc.account_id, issuer: @oidc.issuer, sub: @oidc.sub } }
     assert_redirected_to oidc_url(@oidc)
   end
 

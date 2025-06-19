@@ -4,8 +4,7 @@ class PagesController < ApplicationController
 
   # GET /pages
   def index
-    @pages = Page
-      .all
+    @pages = Page.find.join
     @q = @pages.ransack(params[:q])
     @q.sorts = "id asc" if @q.sorts.empty?
     @pagy, @pages = pagy(@q.result, page: params[:page], items: params[:items])
@@ -60,6 +59,6 @@ class PagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def page_params
-      params.require(:page).permit(:url)
+      params.expect(page: %w[url])
     end
 end

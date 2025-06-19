@@ -97,8 +97,7 @@ class AccountsControllerTest < ActionDispatch::IntegrationTest
   test "should create account" do
     assert_difference("Account.count") do
       post accounts_url, params: { account:
-        { display_name: @account.display_name }
-       }
+        { display_name: @account.display_name } }
     end
 
     assert_redirected_to account_url(Account.last)
@@ -116,8 +115,7 @@ class AccountsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update account" do
     patch account_url(@account), params: { account:
-      { display_name: @account.display_name }
-     }
+      { display_name: @account.display_name } }
     assert_redirected_to account_url(@account)
   end
 

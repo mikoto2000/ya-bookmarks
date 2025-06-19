@@ -61,6 +61,6 @@ class OidcsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def oidc_params
-      params.require(:oidc).permit(:issuer, :sub, :account_id)
+      params.expect(oidc: %w[issuer sub account_id])
     end
 end
