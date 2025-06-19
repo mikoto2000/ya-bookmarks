@@ -1,0 +1,9 @@
+<h1><%= t("view.edit.title", model: Oidc.model_name.human) %></h1>
+<%= render "form", oidc: @oidc %>
+
+<br>
+
+<div>
+  <%= link_to t("view.edit.move_to_show", model: Oidc.model_name.human), @oidc %> |
+  <%= link_to t("view.edit.move_to_index", model: Oidc.model_name.human.pluralize), oidcs_path %>
+</div>

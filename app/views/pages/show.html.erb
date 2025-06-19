@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= Page.model_name.human %></h1>
+
+<%= render @page %>
+
+<div>
+  <%= link_to t("view.show.move_to_update", model: Page.model_name.human), edit_page_path(@page) %> |
+  <%= link_to t("view.show.move_to_index", model: Page.model_name.human.pluralize), pages_path %>
+
+  <%= button_to t("helpers.submit.delete"),
+                @page,
+                method: :delete,
+                class: %w[btn btn-primary],
+                data: { turbo_confirm: t("helpers.dialog.delete", id: @page.id) } %>
+</div>

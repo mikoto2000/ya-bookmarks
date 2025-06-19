@@ -1,0 +1,62 @@
+<div id="<%= dom_id oidc %>">
+  <table class="table table-hover">
+    <tr>
+      <td>
+        <strong>Id:</strong>
+      </td>
+      <td>
+        <%= oidc.id %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>
+          <%= Oidc.human_attribute_name(:issuer) %>
+        </strong>
+      </td>
+      <td>
+        <%= oidc.issuer %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>
+          <%= Oidc.human_attribute_name(:sub) %>
+        </strong>
+      </td>
+      <td>
+        <%= oidc.sub %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>
+          <%= Oidc.human_attribute_name(:account_id) %>
+        </strong>
+      </td>
+      <td>
+        <%= oidc.account.display_name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>
+          <%= Oidc.human_attribute_name(:created_at) %>
+        </strong>
+      </td>
+      <td>
+        <%= oidc.created_at && l(oidc.created_at) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>
+          <%= Oidc.human_attribute_name(:updated_at) %>
+        </strong>
+      </td>
+      <td>
+        <%= oidc.updated_at && l(oidc.updated_at) %>
+      </td>
+    </tr>
+  </table>
+</div>
