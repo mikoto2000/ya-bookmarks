@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   # ログアウト form で、ここを叩くようにする
   get 'auth/logout', to: 'session#delete'
 
+  get '/', to: 'home#index'
+  post 'add_my_bookmark', to: 'home#add_my_bookmark'
 end
