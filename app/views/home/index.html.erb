@@ -1,0 +1,30 @@
+<div style="display: flex;flex-direction: column;height: 100vh;">
+
+  <header class="main-content-header">
+    <p style="color: green"><%= notice %></p>
+  </header>
+
+  <main>
+    <div>
+      <%= form_with(url: add_my_bookmark_path, method: :post, html: { class: %w[form-control form-control-sm] }) do |form| -%>
+
+        <div>
+          <%= form.label :display_name, style: "display: block" %>
+          <div class="ps-2">
+            <%= form.text_field :url, class: %w[form-control form-control-sm] %>
+          </div>
+        </div>
+        <div>
+          <%= form.submit class: %w[btn btn-primary] %>
+        </div>
+      <% end %>
+
+    </div>
+    <ol id="bookmarks">
+      <% @bookmarks.each do |bookmark| %>
+        <%= render partial: 'bookmark', locals: { bookmark: bookmark } %>
+      <% end %>
+    </ol>
+  </main>
+</div>
+
